@@ -1,0 +1,140 @@
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --accent: #7c5cfc;
+  --accent-hover: #6849f0;
+  --text: #e4e4e7;
+  --muted: #8b8b96;
+  --border: #2a2d3a;
+  --green: #22c55e;
+  --yellow: #eab308;
+  --red: #ef4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 40px 0 30px;
+  text-align: center;
+}
+
+header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 6px; }
+.source { color: var(--muted); font-size: 0.85rem; }
+.source a { color: var(--accent); text-decoration: none; }
+.source a:hover { text-decoration: underline; }
+
+main { padding: 30px 0 60px; }
+
+section { margin-bottom: 36px; }
+
+h2 { font-size: 1.3rem; margin-bottom: 16px; }
+.hint { color: var(--muted); font-size: 0.85rem; font-weight: normal; }
+
+form { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+
+.form-row { margin-bottom: 16px; }
+.form-row label, .form-grid label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+
+input[type="text"], input[type="number"], select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+.btn-add {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-add:hover { background: var(--accent-hover); }
+
+table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+
+th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+th { background: #222531; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+th:last-child, td:last-child { width: 50px; text-align: center; }
+
+tr:last-child td { border-bottom: none; }
+
+.score-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.score-high { background: rgba(34,197,94,0.15); color: var(--green); }
+.score-mid { background: rgba(234,179,8,0.15); color: var(--yellow); }
+.score-low { background: rgba(239,68,68,0.15); color: var(--red); }
+
+.btn-del {
+  background: none;
+  border: none;
+  color: var(--red);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.btn-del:hover { background: rgba(239,68,68,0.1); }
+
+.empty-msg { color: var(--muted); text-align: center; padding: 30px; }
+
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } }
+
+.summary-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+}
+.summary-label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+.summary-value { font-size: 2rem; font-weight: 700; color: var(--accent); }
+
+details { margin-top: 8px; }
+summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+.btn-example {
+  margin-top: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn-example:hover { border-color: var(--accent); }
+
+footer { border-top: 1px solid var(--border); padding: 24px 0; text-align: center; color: var(--muted); font-size: 0.85rem; }
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
